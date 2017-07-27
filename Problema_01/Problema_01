@@ -1,0 +1,70 @@
+#include <iostream>
+#include <locale.h>
+#include <stdlib.h>
+
+int main(void) 
+{
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("FriBorges - Boi bom, é boi na grelha!\n\n");
+	
+	float peso[10];
+	double maior, menor; //tive que usar double, pois ficava retornando "nan" ao compilar.
+	int j, maiorpos, menorpos;
+	int i = 0; //Quantidade de bois
+	int verif = 1; //Variável criada para validar o While, sem ele o vetor sempre ficará como zero, falhando a repetição.
+	
+	while(verif != 0) //verif == peso, então se verif for zero, peso será zero, encerrando a estrutura de repetição.
+	{
+		printf("Digite o peso do Boi %d: ", i);
+		scanf("%f", &peso[i]);
+		verif = peso[i];
+		i++;
+		
+		if(verif == 0)
+		{
+			i = i - 1; //Foi preciso reduzir 1 para elimnar o vetor que recebe o 0 para finalizar o programa.
+		}
+		
+		if(i == 10) //encerra a estrutura caso chegue no valor 10, é o máximo solicitado no problema.
+		{
+			verif = 0;
+		}
+	}
+	
+	j = i;
+	
+	printf("\n\nLista de Bois em Kg:\n");
+	
+	for(i = 0; i < j; i++)
+	{
+		printf("%d - %.2f\n", i, peso[i]);	
+	}
+	
+	maior = peso[0];
+	menor = peso[0];
+	maiorpos = 0;
+	menorpos = 0;
+	
+	for(i = 0; i < j; i++)
+	{
+		if(peso[i] > maior)
+			{
+			maior = peso[i];
+			maiorpos = i;
+			}
+	}
+	printf("\n\nO Boi mais gordo é o %d.\n", maiorpos);
+	
+	for(i = 0; i < j; i++)
+	{
+		if(peso[i] < menor)
+			{
+			menor = peso[i];
+			menorpos = i;
+			}
+	}
+	printf("O Boi mais magro é o %d.\n\n\n", menorpos);
+	
+	return 0;
+}
