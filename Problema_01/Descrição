@@ -1,0 +1,4 @@
+Um pecuarista possui uma determinada quantia de bois, que possuem um identificador numérico (de 1 a n) cada um. Faça um programa que:
+a. receba o peso de cada boi, um por vez, e o armazene em um vetor. Se o peso digitado for 0 significa que não há mais bois a serem digitados; 
+b. mostre a lista de todos os bois com seus identificadores e também os identificadores do boi mais gordo e do boi mais magro. Se houver dois ou mais bois mais gordos ou mais magros mostrar o de menor identificador; 
+c. Faça o mesmo programa considerando que o número de bois é fixo e igual a dez.
