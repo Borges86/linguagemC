@@ -1,0 +1,50 @@
+#include <iostream>
+#include <locale.h>
+
+int horaJogo(int horaInicial, int horaFinal, int minutoInicial, int minutoFinal)
+{
+	int calcHora, calcMinuto, tempo, minutoJogo, tempoCompleto, tempoMinutos;
+			
+	if(horaFinal > horaInicial)
+	{
+		calcHora = horaFinal - horaInicial;
+		calcMinuto = minutoFinal - minutoInicial;
+		minutoJogo = (calcHora * 60) + calcMinuto;
+	}
+	else
+	{
+		calcHora = (24 - horaInicial) + horaFinal;
+		calcMinuto = minutoFinal - minutoInicial;
+		minutoJogo = (calcHora * 60) + calcMinuto;
+	}
+
+	tempoMinutos = ("%d", minutoJogo);
+	
+	return (tempoMinutos);
+}
+
+
+main() 
+{
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("Tempo de Jogo.\n\n");
+	
+	int HI, HF, MI, MF, parametro;
+	
+	printf("Vamos calcular o tempo de duração do jogo, lembrando que usamos de 00:00 à 23:59.\n");
+	printf("Digite a hora que iniciou a partida: ");
+	scanf("%d", &HI);
+	printf("Digite o minuto que iniciou a partida: ");
+	scanf("%d", &MI);
+	printf("Digite a hora que terminou a partida: ");
+	scanf("%d", &HF);
+	printf("Digite o minuto que terminou a partida: ");
+	scanf("%d", &MF);
+	
+	parametro = horaJogo(HI, HF, MI, MF);
+	
+	printf("Tempo do jogo foi de %d minutos.", parametro);
+	
+	return 0;
+}
