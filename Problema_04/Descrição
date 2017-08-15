@@ -1,0 +1,4 @@
+Implementar um programa de gerenciamento de high scores. O programa deve:
+a.	carregar os high scores de um arquivo e mostrar. Cada high score é composto de um nome (max. 10 caracteres) e um inteiro (pontuação)
+b.	pedir ao usuário o seu nome e a sua pontuação no jogo. 
+c.	posicionar os dados do usuário na tabela de highest scores (max. 5) e regravar no arquivo.
