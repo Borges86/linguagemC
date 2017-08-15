@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main() 
+{
+	int a = 30;
+	int b = 15;
+	int c = 75;
+	int d = 155;
+	float e = 45.6;
+	float f = 987.2;
+	float g = 12.2;
+	float h = 67.8;
+	char v [10] = "Ponteiros";
+	int x;
+	int *ptr;
+		
+	ptr = &a;
+	printf("Conteudo do endereco %p: %d\n\n", a, a);
+	
+	ptr++;
+	
+	while(ptr != ptr - 1)
+	{
+		printf("Conteudo do endereco %p: %d\n", ptr, ptr);
+	}
+	
+	printf("Endereco de memoria identico. Lixo na area.");
+			
+	return 0;
+}
